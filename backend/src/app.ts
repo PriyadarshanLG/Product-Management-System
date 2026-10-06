@@ -1,8 +1,6 @@
 import express, { Application, Request, Response } from 'express';
 import cors from 'cors';
 import productRoutes from './routes/product.routes';
-import authRoutes from './routes/auth.routes';
-import { requireAdmin } from './middleware/admin-auth.middleware';
 import { errorHandler } from './middleware/error.middleware';
 
 const app: Application = express();
@@ -35,9 +33,7 @@ app.get('/api/health', (_req: Request, res: Response) => {
   });
 });
 
-// Public authentication route; product APIs require a valid admin session.
-app.use('/api/auth', authRoutes);
-app.use('/api/products', requireAdmin, productRoutes);
+app.use('/api/products', productRoutes);
 
 // Handle 404 routes
 app.use((_req: Request, res: Response) => {

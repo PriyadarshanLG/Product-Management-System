@@ -16,12 +16,10 @@ The **Gupio Product Management System** is a full-stack web application designed
 - **Modular TypeScript Architecture**: Structured into clean layers (Models, Services, Controllers, Routes, Middleware, Components).
 - **Mobile-First Responsive UI**: The dashboard and inventory workflow are optimized for phone screens and smaller tablets without breaking desktop usability.
 
-### Local Access & Admin Credentials
+### Local Access
 - **Frontend**: `http://localhost:4200`
-- **Default Admin Username**: `admin`
-- **Default Admin Password**: `admin12345`
-
-> This setup is intended for local development. In production, configure secure environment variables for admin credentials and JWT secrets.
+- The workspace opens directly to the dashboard; no admin sign-in is required.
+- Product API endpoints are not authenticated. Restrict network access to the backend before deploying it publicly.
 
 ---
 
